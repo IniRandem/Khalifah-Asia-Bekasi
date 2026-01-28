@@ -360,3 +360,77 @@ footer span{
 .other-card {
     animation: fadeIn 1s ease-in-out;
 }
+
+.features.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-left: 6px solid #d4af37;
+}
+
+.feature-card h3 {
+    color: #d4af37;
+    margin-bottom: 16px;
+}
+
+.feature-card ul {
+    padding-left: 18px;
+}
+
+.feature-card li {
+    margin-bottom: 8px;
+}
+
+.feature-card.highlight {
+    background: #fff9dd;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature-card.highlight p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.feature-card.highlight span {
+    color: #b8962e;
+    font-weight: 600;
+}
+
+.detail-btn {
+    display: inline-block;
+    padding: 12px 26px;
+    background: linear-gradient(135deg, #d4af37, #b8962e);
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.detail-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+
+.agent-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-left: 6px solid #d4af37;
+}
