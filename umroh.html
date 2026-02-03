@@ -3,56 +3,369 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khalifah Asia Bekasi</title>
+<title>Umroh 2 Juta Rupiah | Khalifah Asia Bekasi</title>
 <link rel="icon" type="image/png" href="icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="style.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Montserrat', sans-serif;
+}
+
+body{
+  background:#f7f3ec;
+  color:#3b2a20;
+  line-height:1.7;
+}
+
+/* ===== HEADER ===== */
+header{
+  background:#fff;
+  border-bottom:1px solid #eee;
+}
+
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.nav-logo img{
+  height:65px;
+}
+
+.nav-menu{
+  list-style:none;
+  display:flex;
+  gap:28px;
+}
+
+.nav-menu a{
+  text-decoration:none;
+  color:#4b2e1f;
+  font-weight:600;
+}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(90deg,#000 0%, #2f1b0f 40%, #4b2e1f 100%);
+  padding:120px 24px;
+}
+
+/* kabah */
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-15%;
+  left:-20%;
+  width:70%;
+  height:140%;
+  background:
+    linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.25)),
+    url("kabah.png") center/cover no-repeat;
+  border-radius:50%;
+  z-index:1;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  top:-15%;
+  left:-20%;
+  width:70%;
+  height:140%;
+  border-radius:50%;
+  box-shadow:inset 0 0 0 14px #c9a24d;
+  opacity:.9;
+  z-index:2;
+}
+
+.hero-inner{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:40px;
+  align-items:center;
+  position:relative;
+  z-index:3;
+}
+
+.hero-left h1{
+  color:#fff;
+  font-size:3rem;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.hero-left p{
+  color:#f1e8db;
+  margin-bottom:30px;
+  max-width:540px;
+}
+
+.hero-btn{
+  display:inline-block;
+  background:linear-gradient(135deg,#e5c27a,#c9a24d);
+  color:#4b2e1f;
+  padding:15px 38px;
+  border-radius:40px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 10px 22px rgba(0,0,0,.25);
+  transition:.3s;
+}
+
+.hero-btn:hover{
+  transform:translateY(-3px);
+}
+
+/* kanan */
+.hero-right{
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(3px);
+  padding:36px;
+  border-left:5px solid #c9a24d;
+}
+
+.hero-right h2{
+  color:#c9a24d;
+  font-size:2.1rem;
+  margin-bottom:14px;
+}
+
+.hero-right p{
+  color:#e6dccd;
+  font-size:.95rem;
+}
+
+/* ===== SECTION ===== */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:90px 24px;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.2rem;
+  font-weight:800;
+  color:#4b2e1f;
+  margin-bottom:14px;
+}
+
+.section-subtitle{
+  text-align:center;
+  max-width:720px;
+  margin:0 auto 50px;
+  color:#6b4226;
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+
+.card{
+  background:#ffffff;
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 10px 22px rgba(0,0,0,.08);
+}
+
+.card h3{
+  color:#6b4226;
+  margin-bottom:12px;
+}
+
+.card.highlight{
+  background:linear-gradient(145deg,#6b4226,#4b2e1f);
+  color:#f7f3ec;
+}
+
+.card.highlight h3{
+  color:#c9a24d;
+}
+
+/* ===== CTA ===== */
+.cta{
+  background:#4b2e1f;
+  color:#fff;
+  text-align:center;
+  padding:80px 24px;
+}
+
+.cta h2{
+  font-size:2.3rem;
+  margin-bottom:16px;
+}
+
+.cta p{
+  max-width:680px;
+  margin:0 auto 30px;
+  color:#e9dfd3;
+}
+
+.cta a{
+  display:inline-block;
+  background:#c9a24d;
+  color:#4b2e1f;
+  padding:16px 44px;
+  border-radius:40px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#3b2418;
+  color:#e9dfd3;
+  text-align:center;
+  padding:26px 16px;
+  font-size:.9rem;
+}
+
+footer span{
+  color:#c9a24d;
+  font-weight:600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .hero-left h1{
+    font-size:2.3rem;
+  }
+
+  .hero::before,
+  .hero::after{
+    display:none;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-<nav>
-    <div class="logo">
-        <img src="Khalifah Bekasi.png" alt="Khalifah Logo">
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="Khalifah Bekasi.png" alt="Khalifah Asia Bekasi">
     </div>
-    <ul class="nav-links">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="https://wa.me/62817843531">Kontak</a></li>
+    <ul class="nav-menu">
+      <li><a href="#">Beranda</a></li>
+      <li><a href="https://wa.me/62817843531">Kontak</a></li>
     </ul>
-</nav>
+  </nav>
 </header>
-<section class="other-paket">
 
-  <div class="other-grid">
+<section class="hero">
+  <div class="hero-inner">
 
-    <div class="other-card">
-      <img src="umrohliburanlebaran.jpeg" alt="Umroh Libur Lebaran">
+    <div class="hero-left">
+      <h1>Umroh 2 Juta Rupiah</h1>
+      <p>
+        Mulai langkah ke Baitullah dengan modal ringan.
+        Program umroh bertahap dengan sistem jelas,
+        <strong>keberangkatan bebas kamu tentukan sendiri</strong>.
+      </p>
+      <a href="#program" class="hero-btn">Pelajari Program</a>
     </div>
 
-    <div class="other-card">
-      <img src="umrah liburan sekolah.jpeg" alt="Umroh Liburan Sekolah">
-    </div>
-
-    <div class="other-card">
-      <img src="umrohplus auula.jpeg" alt="Umroh Plus Al Ula">
-    </div>
-
-    <div class="other-card">
-      <img src="umrah ikhtikaf.jpeg" alt="Umroh ikhtikaf">
+    <div class="hero-right">
+      <h2>Keberangkatan Bebas Pilih</h2>
+      <p>
+        Tidak dipaksa tanggal. Tidak dikejar-kejar.
+        Kamu berangkat saat benar-benar siap,
+        secara finansial maupun mental.
+      </p>
     </div>
 
   </div>
+</section>
 
-  <div class="other-cta">
-    <a href="https://whatsform.com/_acrhg">DAFTAR SEKARANG</a>
+<section class="section" id="program">
+  <h2 class="section-title">Apa Itu Program Umroh 2 Juta?</h2>
+  <p class="section-subtitle">
+    Program perjalanan umroh berbasis sistem bertahap,
+    dimulai dengan pendaftaran 2 juta rupiah.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Modal Awal Ringan</h3>
+      <p>
+        Cukup 2 juta rupiah untuk memulai.
+        Cocok untuk siapa saja yang punya niat,
+        tanpa harus menunggu kaya dulu.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Bukan Arisan / Undian</h3>
+      <p>
+        Program ini bukan sistem keberuntungan.
+        Semua dijalankan dengan alur yang jelas
+        dan bisa dijelaskan dari awal.
+      </p>
+    </div>
+
+    <div class="card highlight">
+      <h3>Sistem Transparan</h3>
+      <p>
+        Alur, hak, dan kewajiban peserta
+        dijelaskan secara terbuka
+        dengan pendampingan agent resmi.
+      </p>
+    </div>
   </div>
+</section>
 
+<section class="section">
+  <h2 class="section-title">Fasilitas Saat Berangkat</h2>
+  <p class="section-subtitle">
+    Ketika sudah memenuhi syarat keberangkatan,
+    peserta akan mendapatkan fasilitas umroh lengkap.
+  </p>
+
+  <div class="grid">
+    <div class="card"><h3>✈️ Tiket PP</h3><p>Indonesia – Arab Saudi</p></div>
+    <div class="card"><h3>🏨 Hotel</h3><p>Dekat Masjidil Haram & Nabawi</p></div>
+    <div class="card"><h3>🛂 Visa Umroh</h3><p>Diurus resmi & sesuai prosedur</p></div>
+    <div class="card"><h3>🚌 Transport</h3><p>Selama di Tanah Suci</p></div>
+    <div class="card"><h3>🍽️ Konsumsi</h3><p>Selama perjalanan</p></div>
+    <div class="card"><h3>🧕 Pembimbing</h3><p>Ibadah sesuai sunnah</p></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Saatnya Niat Jadi Kenyataan</h2>
+  <p>
+    Jangan tunda panggilan Allah.
+    Mulai dengan 2 juta rupiah,
+    sisanya berjalan dengan bimbingan.
+  </p>
+  <a href="https://wa.me/62817843531?text=Saya%20tertarik%20program%20Umroh%202%20Juta%20Rupiah" target="_blank">
+    Konsultasi Sekarang
+  </a>
 </section>
 
 <footer>
-    <p>&copy; 2026 <span>Khalifah Asia Bekasi</span>. All rights reserved.</p>
+  <p>&copy; 2026 <span>Khalifah Asia Bekasi</span>. All rights reserved.</p>
 </footer>
-</body>
 
+</body>
 </html>
